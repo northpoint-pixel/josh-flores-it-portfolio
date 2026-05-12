@@ -499,39 +499,40 @@ footer {
     padding: 28px;
   }
   
-  .resume-page {
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 80px 0 90px;
+ .resume-page {
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: 0 auto !important;
+  padding: 80px 0 90px !important;
 }
 
-.resume-header {
-  max-width: 850px;
-  margin-bottom: 48px;
+.resume-hero-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 42px;
+  box-shadow: 0 0 34px var(--shadow);
+  margin-bottom: 32px;
 }
 
-.resume-header p {
+.resume-hero-card h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.resume-hero-card p {
   color: var(--muted);
+  max-width: 850px;
   font-size: 1.08rem;
-  margin-bottom: 24px;
 }
 
-.resume-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 28px;
-}
-
-.resume-grid {
+.resume-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) 360px;
   gap: 28px;
   align-items: start;
 }
 
-.resume-main,
-.resume-sidebar {
+.resume-column-main,
+.resume-column-side {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -548,12 +549,11 @@ footer {
 .resume-card h3 {
   color: var(--primary);
   font-size: 1.45rem;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .resume-card h4 {
   color: var(--text);
-  font-size: 1.1rem;
   margin-bottom: 6px;
 }
 
@@ -565,21 +565,19 @@ footer {
 
 .resume-card ul {
   padding-left: 20px;
-  margin-top: 10px;
-}
-
-.resume-item {
-  margin-bottom: 26px;
-}
-
-.resume-item:last-child {
-  margin-bottom: 0;
 }
 
 .resume-muted {
   color: var(--secondary) !important;
   font-weight: 800;
   margin-bottom: 8px;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
 
 .skill-tags {
@@ -600,14 +598,15 @@ footer {
 
 @media (max-width: 950px) {
   .resume-page {
-    width: min(100% - 36px, 1180px);
-    padding: 60px 0 70px;
+    width: min(100% - 36px, 1180px) !important;
+    padding: 60px 0 70px !important;
   }
 
-  .resume-grid {
+  .resume-layout {
     grid-template-columns: 1fr;
   }
 
+  .resume-hero-card,
   .resume-card {
     padding: 24px;
   }
