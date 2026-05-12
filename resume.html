@@ -5,6 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume | Joshua Flores</title>
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .resume-wrapper {
+      width: min(1150px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .resume-hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 0 34px var(--shadow);
+      margin-bottom: 32px;
+    }
+
+    .resume-hero h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+    }
+
+    .resume-hero p {
+      color: var(--muted);
+      max-width: 800px;
+      font-size: 1.08rem;
+      margin-bottom: 22px;
+    }
+
+    .resume-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .resume-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) 360px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .resume-left,
+    .resume-right {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .resume-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 0 28px var(--shadow);
+    }
+
+    .resume-box h3 {
+      color: var(--primary);
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+
+    .resume-box h4 {
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .resume-box p,
+    .resume-box li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .resume-box ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .resume-item {
+      margin-bottom: 24px;
+    }
+
+    .resume-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .resume-muted {
+      color: var(--secondary) !important;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .resume-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .resume-tags span {
+      border: 1px solid var(--border);
+      color: var(--primary);
+      background: rgba(255, 255, 255, 0.14);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 950px) {
+      .resume-wrapper {
+        width: min(100% - 36px, 1150px);
+        padding: 60px 0;
+      }
+
+      .resume-content {
+        grid-template-columns: 1fr;
+      }
+
+      .resume-hero,
+      .resume-box {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,9 +148,9 @@
     <button id="theme-toggle" class="theme-toggle">Dark Mode</button>
   </header>
 
-  <main class="resume-page">
+  <main class="resume-wrapper">
 
-    <section class="resume-hero-card">
+    <section class="resume-hero">
       <p class="tagline">Professional Resume</p>
       <h1>Joshua Flores</h1>
       <h2>Information Technology Student | Cybersecurity Focus</h2>
@@ -36,26 +161,18 @@
         fundamentals, CRM implementation, and documentation.
       </p>
 
-      <div class="resume-actions">
-  <a href="Flores_Joshua_Resume.pdf" class="btn primary" target="_blank">
-    View Resume PDF
-  </a>
-
-  <a href="Flores_Joshua_Resume.pdf" class="btn secondary" download>
-    Download Resume
-  </a>
-
-  <a href="contact.html" class="btn secondary">
-    Contact Me
-  </a>
-</div>
+      <div class="resume-buttons">
+        <a href="Flores_Joshua_Resume.pdf" class="btn primary" target="_blank">View Resume PDF</a>
+        <a href="Flores_Joshua_Resume.pdf" class="btn secondary" download>Download Resume</a>
+        <a href="contact.html" class="btn secondary">Contact Me</a>
+      </div>
     </section>
 
-     <section class="resume-layout">
+    <section class="resume-content">
 
-      <div class="resume-column-main">
+      <div class="resume-left">
 
-        <article class="resume-card">
+        <article class="resume-box">
           <h3>Professional Summary</h3>
           <p>
             Information Technology student with a concentration in Cybersecurity.
@@ -65,7 +182,7 @@
           </p>
         </article>
 
-        <article class="resume-card">
+        <article class="resume-box">
           <h3>Education</h3>
           <h4>Bachelor’s Degree in Information Technology</h4>
           <p class="resume-muted">Concentration: Cybersecurity</p>
@@ -75,7 +192,7 @@
           </p>
         </article>
 
-        <article class="resume-card">
+        <article class="resume-box">
           <h3>Project Experience</h3>
 
           <div class="resume-item">
@@ -102,11 +219,11 @@
 
       </div>
 
-      <aside class="resume-column-side">
+      <aside class="resume-right">
 
-        <article class="resume-card">
+        <article class="resume-box">
           <h3>Technical Skills</h3>
-          <div class="skill-tags">
+          <div class="resume-tags">
             <span>Cybersecurity</span>
             <span>IT Support</span>
             <span>Troubleshooting</span>
@@ -118,19 +235,19 @@
           </div>
         </article>
 
-        <article class="resume-card">
+        <article class="resume-box">
           <h3>Tools</h3>
-          <div class="skill-tags">
+          <div class="resume-tags">
             <span>GitHub</span>
             <span>Little Green Light</span>
             <span>Mailchimp</span>
             <span>Microsoft Teams</span>
             <span>Wireshark</span>
-            <span>Wazuh</span>
+            <span>Kali Linux</span>
           </div>
         </article>
 
-        <article class="resume-card">
+        <article class="resume-box">
           <h3>Career Interests</h3>
           <ul>
             <li>Help Desk / IT Support</li>
